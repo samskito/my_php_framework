@@ -1,0 +1,3 @@
+index template
+
+<?= $GLOBALS['data'] ?>
