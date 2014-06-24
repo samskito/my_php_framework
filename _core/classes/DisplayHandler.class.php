@@ -189,10 +189,15 @@
 			else 
 				$GLOBALS['data'] = NULL;
 				
-			// NEED TO FORMAT DATA
-			$GLOBALS['sitename'] = '';
-			$GLOBALS['css'] = TEMPLATE_CSS;
-			$GLOBALS['js'] = TEMPLATE_JS;
+			if (isset($GLOBALS['data']['title']) && trim($GLOBALS['data']['title']) != '') {
+				$GLOBALS['data']['sitename'] = $GLOBALS['data']['title'].' | sa.mskito';
+			}
+			else {
+				$GLOBALS['data']['sitename'] = 'sa.mskito';
+			}
+			
+			$GLOBALS['data']['css'] = TEMPLATE_CSS;
+			$GLOBALS['data']['js'] = TEMPLATE_JS;
 		}
 		
 		/**

@@ -10,6 +10,7 @@
 		
 		function init() {
 			// return array
+			return array('title' => 'Home');
 		}
 		
 		/**

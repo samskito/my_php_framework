@@ -2,14 +2,17 @@
 	namespace sam;
 	
 	class Notfound extends DisplayHandler {
+		private $text = null;
+		private $url = null;
+	
 		function __construct($params = array()) {
-			
+			$this->text = 'Page not found: <br/>';
+			$this->url = '<span class="not_found_uri">'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'</span>';
 		}
 		
 		function init() {
-			// Do stuff here
-			// return array
-			//return array('view' => '404');
+			return array('error_message' => $this->text.$this->url,
+						 'title' => 'Page not found');
 		}
 		
 		protected function template() {
